@@ -1,12 +1,14 @@
 import React from 'react'
 import Axios from 'axios';
 import './App.css';
-import Title from './components/titlecard';
 
-  class Main extends React.Component { 
+
+  class App extends React.Component { 
     constructor(props) {
       super(props);
       this.state = {posts:[] };
+      //other state variables: CurrentCollection(int), currentCard(int), onFront(bool)
+      //this.state.posts[this.state.currentCollection].cards[this.state.currentCard].word
     }
     async componentDidMount() {
       const posts = await Axios.get(`http://localhost:5000/api/collections`);
@@ -60,7 +62,7 @@ import Title from './components/titlecard';
   }
 }
 
-  ReactDOM.render(
-    <Main />,
-    document.getElementById('app')
-  );
+
+
+export default App
+
