@@ -58,8 +58,8 @@ import Title from './components/titlecard';
       </div>
       )
   }
-   
-  
+}
+
   ReactDOM.render(
     <Main />,
     document.getElementById('app')

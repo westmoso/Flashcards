@@ -1,7 +1,7 @@
 import React from 'react'
 import Axios from 'axios';
 import './App.css';
-import Title from './components/titlecard';
+import Title from './components/cardTitle';
 
   class Title extends React.Component {
     render() {
