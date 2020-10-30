@@ -3,14 +3,16 @@
 // import './App.css';
 // import Title from './components/titlecard';
 
-
-// //   import React from 'react'
+export default function Card(props){
+    const [text, setText] = react.useState(props.frontSide);
+    function handleClick(){
+      setText(props.backSide);
+    }
   
-// //   export default function card() {
-// //       return (
-// //           <div>
-              
-// //           </div>
-// //       )
-// //   }
+    return(
+       <div className="flash-card" onClick={handleClick}>
+         {text}
+      </div>
+    )
+  }
   

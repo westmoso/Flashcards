@@ -1,14 +1,14 @@
 import React from 'react'
 import Axios from 'axios';
 import './App.css';
-import CardTitle from './cardComp/cardTitle'
+import Card from "./cardComp/card"
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { posts: [], currentCard(int), currentCollection(int), onFront(bool)}
-    //     this.state = {posts:[], currentCard(int)}, {currentCollection(int)}, {onFront(bool)}};
+  
     //other state variables: CurrentCollection(int), currentCard(int), onFront(bool)
     //this.state.posts[this.state.currentCollection].cards[this.state.currentCard].word
   }
@@ -63,17 +63,32 @@ class App extends React.Component {
     )
   }
 }
+//// aj made this to make the cards
 
-class Card extends React.Component {
-  render() {
-    return (
-      <article className="card">
-        {/* <cardTitle category={this.props.details.category} image={this.props.details.image} /> */}
-        {/* <CardBody title={this.props.details.title} text={this.props.details.text}/> */}
-      </article>
-    )
-  }
+
+
+export default function App(){
+  return(
+    <div className="app">
+      <h1>flash Cards</h1>
+      <h2>Click on card to see answer</h2>
+      <Card frontSide= "question" backSide= "answer" />
+      <Card frontSide= "question" backSide= "answer" />
+      <Card frontSide= "question" backSide= "answer" />
+    </div>
+  )
 }
+
+// class Card extends React.Component {
+//   render() {
+//     return (
+//       <article className="card">
+//         {/* <cardTitle category={this.props.details.category} image={this.props.details.image} /> */}
+//         {/* <CardBody title={this.props.details.title} text={this.props.details.text}/> */}
+//       </article>
+//     )
+//   }
+// }
 
 
 export default App
