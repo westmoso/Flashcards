@@ -1,17 +1,10 @@
 import React from 'react'
-import Axios from 'axios';
-import './App.css';
-import Title from './components/cardTitle';
 
-  class Title extends React.Component {
-    render() {
-      return <section className="app-title">
-        <div className="app-title-content">
-          <h1>Latest News</h1>
-          <p>Covering March & April 2015</p>
-          <a className="designer-link" href="https://dribbble.com/shots/1978243-Latest-News" target="_blank">Design from <i className="fa fa-dribbble"></i></a>
-        </div>
-      </section>
-    }
+export default function cardTitle() {
+    return (
+      <div>
+        <h1>TESTING CARD TITLE</h1>
+      </div>
+    )
   }
   
