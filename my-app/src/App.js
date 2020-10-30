@@ -7,7 +7,7 @@ import Card from "./cardComp/card"
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { posts: [], currentCard(int), currentCollection(int), onFront(bool)}
+    //this.state = { posts: [], currentCard(int), currentCollection(int), used done >>>> onFront(bool)}
   
     //other state variables: CurrentCollection(int), currentCard(int), onFront(bool)
     //this.state.posts[this.state.currentCollection].cards[this.state.currentCard].word
