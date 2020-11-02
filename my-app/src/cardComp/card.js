@@ -1,7 +1,6 @@
-// import React from 'react'
-// import Axios from 'axios';
-// import './App.css';
-// import Title from './components/titlecard';
+import React from 'react'
+import './App.css';
+
 
 export default function Card(props){
     const [text, setText] = react.useState(props.frontSide);
@@ -15,4 +14,5 @@ export default function Card(props){
       </div>
     )
   }
+  
   
