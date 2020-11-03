@@ -26,6 +26,56 @@ button{
 
 }
 
+.header {
+  background: white;
+  box-shadow: 7px 7px 22px lightgray;
+  padding: 1em 0em;
+  display: flex;
+  align-items: center;
+  height: 3vh;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.header-content {
+  width: 33.33%;
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
+      font-size: 1.3em;
+    cursor: pointer
+  }
+
+
+.header-content__right {
+  justify-content: flex-end;
+   z-index: 11;
+}
+
+.header-content__left {
+  justify-content: flex-start;
+  margin-left: 1em;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 
 /*  this is for the button */
 
