@@ -34,9 +34,8 @@ class App extends Component {
     if(this.state.posts.length > 0){
       return (
           <div>
+            <h2> click on the card to see the definition</h2>
             <Card data = {this.accessCards()} front={this.state.onFront}/>
-
-
           </div>
           )
     }
@@ -48,8 +47,7 @@ class App extends Component {
       )
     }
   }
-
-
+  
 
 }
 
