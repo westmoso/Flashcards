@@ -1,18 +1,42 @@
-import React from 'react'
-import './App.css';
+import { render } from '@testing-library/react';
+import React from 'react';
+//import './App.css';
 
 
-export default function Card(props){
-    const [text, setText] = react.useState(props.frontSide);
-    function handleClick(){
-      setText(props.backSide);
+class Card extends React.Component{
+    state = {
+      front: this.props.onFront
     }
-  
-    return(
-       <div className="flash-card" onClick={handleClick}>
-         {text}
-      </div>
-    )
+
+    handleClick(){
+      this.setState({
+        front: !this.state.front
+      });
+    }
+    
+    showCardInfo(){
+      if(this.state.front){
+        return this.props.data.word;
+      }
+      else{
+        return this.props.data.definition;
+      }
+    }
+    render(){
+      return (
+        <div>
+          <input type="button" onClick={() => this.handleClick()}>
+         {this.showCardInfo()}
+      </input>
+      <h1>
+        
+      </h1>
+        </div>
+        
+      )
+    }
+    
   }
   
+  export default Card;
   

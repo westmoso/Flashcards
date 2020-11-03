@@ -1,39 +1,54 @@
-import React from 'react'
+import React from 'react';
 import Axios from 'axios';
 import './App.css';
-import Card from "./cardComp/card"
+import Card from "./cardComp/card";
+import {Component} from 'react';
 
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
+class App extends Component {
+  
+      
+      state = { 
       posts: [] ,
-      currentcard: 0,
+      currentCard: 0,
       currentCollection: 0,
       onFront: true
-  
-    //other state variables: CurrentCollection(int), currentCard(int), onFront(bool)
-    //this.state.posts[this.state.currentCollection].cards[this.state.currentCard].word
-  };
+  }
 
-    componentDidMount();{
-    const posts = await Axios.get(`http://localhost:5000/api/collections`);
+  async componentDidMount(){
+    
+    let posts = Axios.get("http://localhost:5000/api/collections");
+    posts = await posts;
     this.setState({ posts: posts.data });
     console.log(this.state.posts);
   }
   
-  
-  render(); {
-    return (
-     <div>
-       <Card data = {this.state.posts[this.state.currentCollection].cards[currentCard]} />
-
-
-     </div>
-    )
+  accessCards(){
+    
+    if(this.state.posts.length > 0){
+      console.log("card", this.state.posts[this.state.currentCollection].cards[this.state.currentCard])
+      return this.state.posts[this.state.currentCollection].cards[this.state.currentCard]
+    }
   }
-}
+  render() {
+    console.log("state", this.state);
+    if(this.state.posts.length > 0){
+      return (
+          <div>
+            <Card data = {this.accessCards()} front={this.state.onFront}/>
+
+
+          </div>
+          )
+    }
+    else{
+      return (
+        <div>
+
+        </div>
+      )
+    }
+  }
+
 
 
 }
