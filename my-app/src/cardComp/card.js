@@ -4,7 +4,7 @@ import React from 'react';
 
 
 class Card extends React.Component{
-    state = {
+    state = { 
       front: this.props.onFront
     }
 
@@ -25,9 +25,9 @@ class Card extends React.Component{
     render(){
       return (
         <div>
-          <input type="button" onClick={() => this.handleClick()}>
+          <button onClick={() => this.handleClick()}>
          {this.showCardInfo()}
-      </input>
+      </button>
       <h1>
         
       </h1>

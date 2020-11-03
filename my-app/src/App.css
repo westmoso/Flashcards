@@ -1,8 +1,10 @@
+/*  this is for the card  */
+
 .App {
   font-family: sans-serif;
   text-align: center;
 }
-.flash-card {
+.Card {
   font-size: 24px;
   line-height: 72px;
   width: 216px;
@@ -11,5 +13,9 @@
   background-color: darkolivegreen;
   cursor: pointer;
   user-select: none;
-  
 }
+
+
+/*  this is for the button */
+
+
