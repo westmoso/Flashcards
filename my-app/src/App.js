@@ -20,8 +20,38 @@ class App extends Component {
   posts = await posts;
   this.setState({ posts: posts.data });
   console.log(this.state.posts);
-  }
+}
 
+createANewCard(){
+  
+    Axios
+      .post("http://localhost:5000/api/collections/5f98ca136e416464aba60d18/cards", {
+        id: "",
+        word: "",
+        definition: ""
+      })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+        console.log(this.state.posts[this.state.currentCollection]._id);
+      });
+  
+}
+createANewCollection(){
+  Axios
+      .post("http://localhost:5000/api/collections", {
+        title: "",
+        cards: ""
+      })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      });
+  
+
+
+
+}
   accessCards(){
     if(this.state.posts.length > 0){
       console.log("card", this.state.posts[this.state.currentCollection].cards[this.state.currentCard])
@@ -60,6 +90,31 @@ class App extends Component {
             <button onClick={() => this.goBackACard()}>last Card</button>
             <button onClick={() => this.goToNextCollection()}>Next Collection</button>
             <button onClick={() => this.goBackACollection()}>last Collection</button>
+
+              <form>
+                <label>
+                 word:
+                 definition:
+                <input type="text" name="word" />
+                <input type="text" name="definition" />
+                </label>
+                <button onClick={() => this.createANewCard()}>create new card</button>
+              </form>
+
+              <br></br>
+              <form>
+                <label>
+                 title:
+                <input type="text" name="word" />
+                </label>
+                <button onClick={() => this.createANewCollection()}>create new collection</button>
+              </form>
+            
+
+            
+
+             
+
             
             
            
@@ -107,18 +162,9 @@ class Header extends React.Component {
               <div className='header-content header-content__left'>
                   <a href="/">Home</a>
               </div>
-              <div className='header-content header-content__middle'>
-               Add A Card
-        </div>
-              <div className='header-content header-content__right'>
-                  <div class="dropdown">
-                      <span>Pick A Deck</span>
-                      <div class="dropdown-content">
-                          <p>C#</p>
-                          <p>React</p>
-                      </div>
-                  </div>
-              </div>
+              
+              
+             
           </div>
       )
   }
