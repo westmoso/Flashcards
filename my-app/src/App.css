@@ -27,7 +27,7 @@ button{
 }
 
 .header {
-  background: white;
+  background: green;
   box-shadow: 7px 7px 22px lightgray;
   padding: 1em 0em;
   display: flex;
@@ -41,6 +41,7 @@ button{
 .header-content {
   width: 33.33%;
   display: flex;
+  color: black;
   justify-content: center;
   font-weight: 400;
       font-size: 1.3em;
