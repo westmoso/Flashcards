@@ -22,10 +22,10 @@ class App extends Component {
   console.log(this.state.posts);
 }
 
-createANewCard(){
+  createANewCard(){
   
     Axios
-      .post("http://localhost:5000/api/collections/5f98ca136e416464aba60d18/cards", {
+      .post("http://localhost:5000/api/collections/5f98ca136e416464aba60d18/cards",{
         id: "",
         word: "",
         definition: ""
@@ -37,7 +37,7 @@ createANewCard(){
       });
   
 }
-createANewCollection(){
+  createANewCollection(){
   Axios
       .post("http://localhost:5000/api/collections", {
         title: "",
@@ -47,10 +47,6 @@ createANewCollection(){
         console.log(res);
         console.log(res.data);
       });
-  
-
-
-
 }
   accessCards(){
     if(this.state.posts.length > 0){
@@ -58,7 +54,6 @@ createANewCollection(){
       return this.state.posts[this.state.currentCollection].cards[this.state.currentCard]
     }
   }
-
   goToNextCard(){
     let currentCardNumber = this.state.currentCard + 1;
     this.setState({currentCard: currentCardNumber});
@@ -77,7 +72,6 @@ createANewCollection(){
     this.setState({currentCollection: currentCollectionNumber});
 
   }
-
   render(){
     console.log("state", this.state);
     if(this.state.posts.length > 0){
@@ -109,15 +103,6 @@ createANewCollection(){
                 </label>
                 <button onClick={() => this.createANewCollection()}>create new collection</button>
               </form>
-            
-
-            
-
-             
-
-            
-            
-           
           </div>
           )
     }
@@ -131,16 +116,6 @@ createANewCollection(){
   }
   
 }
-  
-
-
-
-      
-
-  
-  
- 
-
 class Header extends React.Component {
   constructor() {
       super();
@@ -162,16 +137,10 @@ class Header extends React.Component {
               <div className='header-content header-content__left'>
                   <a href="/">Home</a>
               </div>
-              
-              
-             
           </div>
       )
   }
-  // getNewCollection(){
-
-
-  // }
+  
 }
 
 
