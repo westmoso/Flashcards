@@ -21,51 +21,12 @@ class Card extends React.Component{
         return this.props.data.definition;
       }
     }
-    
-    getNextCard(){
-
-
-    }
-    getNewCollection(){
-
-
-    }
-    createNewCard(){
-
-
-    }
-
-  
-    render(){
+  render(){
       return (
         <div>
           <button onClick={() => this.handleClick()}>
          {this.showCardInfo()}
         </button>
-           
-            <button onClick={() => this.handleClick()}>
-            {this.getNextCard()} 
-              next Card 
-              </button> 
-           
-            <br></br>
-            <br></br>
-            
-            <button onClick={() => this.handleClick()}> 
-            {this.getNewCollection()}
-              next Collection 
-              </button> 
-            
-            <br></br>
-            <br></br>
-            
-            <button onClick={() => this.handleClick()}> 
-             {this.createNewCard()}
-             Add a new card
-              </button>
-
-
-
         </div>
         
       )

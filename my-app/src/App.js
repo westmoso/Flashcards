@@ -5,53 +5,58 @@ import Card from "./cardComp/card";
 import {Component} from 'react';
 
 class App extends Component {
-  
-      
-      state = { 
-      posts: [] ,
-      currentCard: 0,
-      currentCollection: 0,
-      onFront: true
+    state = { 
+    posts: [] ,
+    currentCard: 0,
+    currentCollection: 0,
+    onFront: true
   }
-
   async componentDidMount(){
-    
-    let posts = Axios.get("http://localhost:5000/api/collections");
-    posts = await posts;
-    this.setState({ posts: posts.data });
-    console.log(this.state.posts);
+  let posts = Axios.get("http://localhost:5000/api/collections");
+  posts = await posts;
+  this.setState({ posts: posts.data });
+  console.log(this.state.posts);
   }
-  
   accessCards(){
-    
-    if(this.state.posts.length > 0){
-      console.log("card", this.state.posts[this.state.currentCollection].cards[this.state.currentCard])
-      return this.state.posts[this.state.currentCollection].cards[this.state.currentCard]
-    }
+  if(this.state.posts.length > 0){
+    console.log("card", this.state.posts[this.state.currentCollection].cards[this.state.currentCard])
+    return this.state.posts[this.state.currentCollection].cards[this.state.currentCard]
   }
-  render() {
-    console.log("state", this.state);
-    
-    if(this.state.posts.length > 0){
-      return (
-          <div>
-            <Header />
-            <h2> click on the card to see the definition</h2>
-            <Card data = {this.accessCards()} front={this.state.onFront}/>
-          </div>
-          )
-    }
-    else{
-      return (
-        <div>
-
-        </div>
-      )
-    }
   }
-  
-
+  accessNextCard(){    /// ask about this one during 1-1
+  for(i = 0; i < this.state.posts.cards.length ; i++){
+    console.log("card", this.state.posts[this.state.currentCollection].cards[this.state.currentCard])
+    return this.state.posts[this.state.currentCollection].cards[this.state.currentCard]
+  }
 }
+  render(){
+  console.log("state", this.state);
+  if(this.state.posts.length > 0){
+    return (
+        <div>
+          <Header />
+          <h2>click on the card to see the definition</h2>
+          <Card data = {this.accessCards()} front={this.state.onFront}/>
+          <button id="nextCard" data = {this.accessNextCard()}>next card</button> 
+        </div>
+        )
+  }
+  else{
+    return (
+      <div>
+
+      </div>
+    )
+  }
+  }
+}
+
+
+      
+
+  
+  
+ 
 
 class Header extends React.Component {
   constructor() {
@@ -89,6 +94,10 @@ class Header extends React.Component {
           </div>
       )
   }
+  // getNewCollection(){
+
+
+  // }
 }
 
 
