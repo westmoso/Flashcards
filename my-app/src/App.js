@@ -78,6 +78,7 @@ class App extends Component {
       return (
           <div>
             <Header />
+            <h1>{[collections.title]}</h1>
             <h2>click on the card to see the definition</h2>
             <Card data = {this.accessCards()} front={this.state.onFront}/>
             <button onClick={() => this.goToNextCard()}>Next Card</button>
